@@ -1,0 +1,17 @@
+.tx/
+addons/
+debian/
+doc/
+odoo/
+setup/
+.mailmap
+CONTRIBUTING.md
+COPYRIGHT
+LICENSE
+MANIFEST.in
+odoo-bin
+requirements.txt
+SECURITY.md
+setup.cfg
+setup.py
+.vscode/
