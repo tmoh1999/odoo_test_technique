@@ -13,7 +13,9 @@
 Odoo Test Module.
     """,
     'depends':[],
-    'data':[],
+    'data':[
+        "security/ir.model.access.csv",
+    ],
     'demo':[],
     'application': True,
     'installable': True,
