@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
+        <record id="view_voyage_form" model="ir.ui.view">
+            <field name="name">voyage.form</field>
+            <field name="model">voyage</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                
+                            </group>
+                            <group>
+								<field name="dateDepart"/>
+								<field name="destination"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
 
         <record id="action_voyage" model="ir.actions.act_window">
