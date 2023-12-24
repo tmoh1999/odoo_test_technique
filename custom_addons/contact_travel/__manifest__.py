@@ -12,7 +12,7 @@
     'description': """
 Odoo Test Module.
     """,
-    'depends':[],
+    'depends':['contacts'],
     'data':[
         "security/ir.model.access.csv",
         "views/menu.xml",
