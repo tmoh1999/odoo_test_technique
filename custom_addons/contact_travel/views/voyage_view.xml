@@ -5,7 +5,7 @@
             <field name="model">voyage</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="name" string="Nom du Voyage"/>
+                    <field name="name" string="Nom du Voyage" filter_domain="['|',('name','ilike',self),('destination','ilike',self) ]"/>
                     <field name="dateDepart" string="Date de départ"/>
                     <field name="destination" string="Destination"/>
                 </search>
