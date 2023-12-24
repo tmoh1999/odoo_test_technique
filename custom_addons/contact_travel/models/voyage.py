@@ -9,5 +9,5 @@ class Voyage(models.Model):
     
     #les attributs de la class Voyage 
     name= fields.Char(string="Nom du Voyage")
-    dateDepart=fields.Date(string="Date de départ")
+    dateDepart=fields.Datetime(string="Date de départ", default=fields.Datetime.now)
     destination=fields.Char(string="Destination")
