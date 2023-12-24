@@ -17,6 +17,7 @@ Odoo Test Module.
         "security/ir.model.access.csv",
         "views/menu.xml",
         "views/voyage_view.xml",
+        "views/contact_view_inherit.xml",
     ],
     'demo':[],
     'application': True,
