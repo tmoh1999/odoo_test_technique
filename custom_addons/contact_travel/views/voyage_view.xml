@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+        <record id="view_voyage_search" model="ir.ui.view">
+            <field name="name">voyage.search</field>
+            <field name="model">voyage</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" string="Nom du Voyage"/>
+                    <field name="dateDepart" string="Date de départ"/>
+                    <field name="destination" string="Destination"/>
+                </search>
+            </field>
+        </record>
+		
         <record id="view_voyage_tree" model="ir.ui.view">
             <field name="name">voyage.tree</field>
             <field name="model">voyage</field>
@@ -11,6 +23,7 @@
                 </tree>
             </field>
         </record>
+		
         <record id="view_voyage_form" model="ir.ui.view">
             <field name="name">voyage.form</field>
             <field name="model">voyage</field>
