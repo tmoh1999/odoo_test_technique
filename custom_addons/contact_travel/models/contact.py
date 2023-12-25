@@ -5,6 +5,11 @@ from odoo.exceptions import UserError, ValidationError
 #Contact Model class inherit from res.partner Model 
 class Contact(models.Model):
     _inherit = "res.partner"
+    
+    
+
+    vlabel=fields.Char(string="0" ,compute="nbvoyage")
+    
 
     def liste_voyages(self):
         field_ids = self.env['voyage'].search([('voyageur_id','=',self.id)]).ids
@@ -23,3 +28,8 @@ class Contact(models.Model):
             'target': 'current',
             'domain': domain,
         }
+        
+    def nbvoyage(self):
+        field_ids = self.env['voyage'].search([('voyageur_id','=',self.id)]).ids
+        self.vlabel=str(len(field_ids)) 
+        
