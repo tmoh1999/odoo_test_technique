@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="view_contact_form_inherit" model="ir.ui.view">
+			<field name="name">res.partner.inherit</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='vat']" position="after">
+					<button name="liste_voyages" string="Voyages de l'utilisateur" type="object" class="oe_highlight"/>
+				</xpath>
+			</field>	
+		</record>
+	</data>
+</odoo>
