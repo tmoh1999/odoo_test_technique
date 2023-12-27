@@ -8,7 +8,12 @@ class Contact(models.Model):
     
     
 
-    vlabel=fields.Char(string="0" ,compute="nbvoyage")
+    nivrecompense = fields.Selection([('argent','Argent'),('or','Or'),('platin','Platlin'),],string="Niveaux de récompense")
+    
+    vlabel = fields.Char(string="0" ,compute="nbvoyage")
+    
+    
+    
     
 
     def liste_voyages(self):

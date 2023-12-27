@@ -6,12 +6,16 @@
 			<field name="model">res.partner</field>
 			<field name="inherit_id" ref="base.view_partner_form"/>
 			<field name="arch" type="xml">
-				<xpath expr="//field[@name='vat']" position="after">
+				<xpath expr="//field[@name='name']" position="after">
 					<group>
 						<button name="liste_voyages" string="Voyages de l'utilisateur : " type="object" class="oe_highlight">
 							<field name="vlabel"/>
 						</button>
 					</group>
+					
+				</xpath>
+				<xpath expr="//field[@name='category_id']" position="after">
+					<field name="nivrecompense"/>
 				</xpath>
 			</field>	
 		</record>
