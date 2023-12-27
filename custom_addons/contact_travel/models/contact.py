@@ -7,8 +7,12 @@ class Contact(models.Model):
     _inherit = "res.partner"
     
     
-
-    nivrecompense = fields.Selection([('argent','Argent'),('or','Or'),('platin','Platlin'),],string="Niveaux de récompense")
+    #NOTE:Règles métiers
+    ##  if nivrecompense>20000:  le client atteint le niveau Argent
+    ##  if nivrecompense>50000:  le client atteint le niveau Or
+    ##  if nivrecompense>100000: le client atteint le niveau Platin
+        
+    nivrecompense = fields.Selection([('argent','Argent'),('or','Or'),('platin','Platin'),],string="Niveaux de récompense")
     
     vlabel = fields.Char(string="0" ,compute="nbvoyage")
     
