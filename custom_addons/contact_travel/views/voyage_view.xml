@@ -6,9 +6,10 @@
             <field name="arch" type="xml">
                 <search>
                     <field name="name" string="Nom du Voyage" filter_domain="['|',('name','ilike',self),('destination','ilike',self) ]"/>
-					<field name="voyageur_id" string="Contact"/>
-                    <field name="dateDepart" string="Date de départ"/>
-                    <field name="destination" string="Destination"/>
+					<field name="voyageur_id"/>
+                    <field name="dateDepart"/>
+                    <field name="destination"/>
+                    <field name="montant"/>
                 </search>
             </field>
         </record>
@@ -18,10 +19,11 @@
             <field name="model">voyage</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="name" string="Nom du Voyage"/>
-					<field name="voyageur_id" string="Contact"/>
-                    <field name="dateDepart" string="Date de départ"/>
-                    <field name="destination" string="Destination"/>
+                    <field name="name"/>
+					<field name="voyageur_id"/>
+                    <field name="dateDepart"/>
+                    <field name="destination"/>
+                    <field name="montant"/>
                 </tree>
             </field>
         </record>
@@ -40,6 +42,7 @@
                             <group>
 								<field name="dateDepart"/>
 								<field name="destination"/>
+                                <field name="montant"/>
                             </group>
                         </group>
                     </sheet>

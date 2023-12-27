@@ -11,7 +11,7 @@ class Voyage(models.Model):
     name= fields.Char(string="Nom du Voyage")
     dateDepart=fields.Datetime(string="Date de départ", default=fields.Datetime.now)
     destination=fields.Char(string="Destination")
-    
+    montant=fields.Float(string="Montant Voyage")
     #Many2one attribute : a link between res.partner Model and Voyage Model 
     #res.partner Contact can have a list of voyages .     
     voyageur_id=fields.Many2one('res.partner', string='Contact')
