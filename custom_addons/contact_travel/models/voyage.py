@@ -18,13 +18,23 @@ class Voyage(models.Model):
     voyageur_id=fields.Many2one('res.partner', string='Contact')
     
 
-
+    # The method create override the default version
+    ## to call <caclNivRecompense> method to change the <nivrecompense> 
+    ## of the related res.partner contact based on conditions.
+      
     @api.model
     def create(self, vals):
         self.caclNivRecompense(vals)
         res=super(Voyage,self).create(vals)
         return res
-
+    
+    # Method caclNivRecompense  takes as input a list of tuples
+    ## correspend to the result after the creation of the voyage.
+    # And calculates the sum of the <montant> of each voyages related to the user
+    ## plus to the new created <montant> value.
+    # After that based on the total sum and the rules it calculates and changes the value
+    ## of the <nivrecompense> of the related res.partner contact.
+    
     def caclNivRecompense(self,vals):
         field_voy_contact = self.env['voyage'].search([('voyageur_id','=',vals["voyageur_id"])])
         

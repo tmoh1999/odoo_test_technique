@@ -14,12 +14,18 @@ class Contact(models.Model):
         
     nivrecompense = fields.Selection([('argent','Argent'),('or','Or'),('platin','Platin'),],string="Niveaux de récompense")
     
+    #Field to display number voyages of the res.partner contact
     vlabel = fields.Char(string="0" ,compute="nbvoyage")
     
     
     
     
-
+    # Method liste_voyages fetchs all voayages of the res.partner contact and the result
+    ## is used to create a domain using ids of the voyages.
+    # After that it search for the id of the view tree  using the name voyage.tree.
+    # Finaly the method returns an action ir.actions.act_window the displays
+    ## all of the voyages of the contact in a tree view.
+            
     def liste_voyages(self):
         field_ids = self.env['voyage'].search([('voyageur_id','=',self.id)]).ids
         
@@ -37,7 +43,10 @@ class Contact(models.Model):
             'target': 'current',
             'domain': domain,
         }
-        
+    
+    #Method nbvoyage search for all voyages related to the res.partner Contact
+    #the result of the search is list of ids of the voyages
+    #this result is used to change the value of the vlabel field to the lenght of the result.       
     def nbvoyage(self):
         field_ids = self.env['voyage'].search([('voyageur_id','=',self.id)]).ids
         self.vlabel=str(len(field_ids)) 
