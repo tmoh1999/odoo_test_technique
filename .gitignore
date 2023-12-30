@@ -10,7 +10,6 @@ COPYRIGHT
 LICENSE
 MANIFEST.in
 odoo-bin
-requirements.txt
 SECURITY.md
 setup.cfg
 setup.py
